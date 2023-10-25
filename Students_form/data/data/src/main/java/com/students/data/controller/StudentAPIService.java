@@ -1,12 +1,14 @@
 package com.students.data.controller;
 
 import com.students.data.model.StudentData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @CrossOrigin("http://localhost:4200/")
 @RestController
 @RequestMapping("/student")
 public class StudentAPIService
 {
+    @Autowired
     StudentData studentData;
     @GetMapping
     public StudentData getStudentDataDetails(String name){
@@ -22,7 +24,7 @@ public class StudentAPIService
         this.studentData = studentData;
         return "Cloud Vendor Updated Successfully";
     }
-    @DeleteMapping("{vendorId}")
+    @DeleteMapping("{id}")
     public String DeleteCloudVendorDetails(String vendorId){
         this.studentData = null;
         return "Cloud Vendor Deleted Successfully";
