@@ -1,0 +1,15 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+span {
+    margin: 20px;
+}
+.container {
+    width: 100%;
+}
+
+.container button {
+    margin-left: auto;
+}
+img{
+    width: 70px;
+    height: 70px;
+}

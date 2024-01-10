@@ -1,0 +1,25 @@
+<div class="container">
+<h2>Data From Database</h2>
+<div class="table">
+    <table border="1">
+      <tr>
+          <td>Name</td>
+          <td>Roll Number</td>
+          <td>Email</td>
+          <td>Department</td>
+      </tr>
+      <tr *ngFor="let items of data">
+          <td>{{items.vendorName}}</td>
+          <td>{{items.vendorRollNumber}}</td>
+          <td>{{items.vendorEmail}}</td>
+          <td>{{items.vendorDepartment}}</td>
+      </tr>
+  
+  </table>
+  <button mat-raised-button color = "primar" (click)="getdata()">Refresh</button>
+  </div>
+</div>
+<div>
+    <h2>Books</h2>
+    
+</div>

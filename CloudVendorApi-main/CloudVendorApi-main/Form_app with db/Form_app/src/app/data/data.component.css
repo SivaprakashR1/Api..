@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container .table {
+    /* background-color:antiquewhite ; */
+    width: 35%;
+    height: 450px;
+    margin: auto;
+    border-radius: 25px;
+    
+}

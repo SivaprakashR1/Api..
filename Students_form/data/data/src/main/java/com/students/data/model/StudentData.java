@@ -8,19 +8,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin("http://localhost:4200/")
 @Entity
-@Table(name = "Student_list")
+@Table(name = "child_list")
 
 @Component
 public class StudentData {
-
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private int roll;
+    private Integer roll;
     private String email;
     private String department;
 

@@ -1,0 +1,44 @@
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>Registration Form</h1>
+        <form #myForm = "ngForm" (ngSubmit)="doRegister(myForm.value)">
+            <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Name</mat-label>
+                  <input type="text" name="vendorName" [(ngModel)]="form_data.vendorName" matInput placeholder="Enter Name" required>
+                  <mat-error *ngIf="myForm.controls['vendorName'].hasError('required')">Name is required</mat-error>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Roll Number</mat-label>
+                  <input type="number" name="vendorRollNumber" [(ngModel)]='form_data.vendorRollNumber' matInput placeholder="Enter Roll Number" required>
+                  <mat-error *ngIf="myForm.controls['vendorRollNumber'].hasError('required')">Roll Number is required</mat-error>
+
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Email</mat-label>
+                  <input type="email" name="vendorEmail" [(ngModel)]="form_data.vendorEmail" matInput placeholder="Enter Email" required>
+                  <mat-error *ngIf="myForm.controls['vendorEmail'].hasError('required')">Email is required</mat-error>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Department</mat-label>
+                  <input type="text" name="vendorDepartment" [(ngModel)]="form_data.vendorDepartment" matInput placeholder="Enter Department" required>
+                  <mat-error *ngIf="myForm.controls['vendorDepartment'].hasError('required')">Department is required</mat-error>
+                </mat-form-field>
+              </p>
+              <div>
+                <button type="submit" mat-raised-button color="primary">Register</button>
+                <button type="reset" mat-raised-button color="accent">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+</body>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card">
+        <h1>Login Form</h1>
+        <form #myLogin = "ngForm" (ngSubmit)="post(myLogin.value)">
+            <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Name</mat-label>
+                  <input type="text" name="vendorName" [(ngModel)]="data.vendorName" matInput placeholder="Enter Name" required>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Roll Number</mat-label>
+                  <input type="number" name="vendorRollNumber" [(ngModel)]="data.vendorRollNumber" matInput placeholder="Enter Roll Number" required>
+                </mat-form-field>
+              </p>
+
+              <div>
+                <button (click)="login()" type="submit" mat-raised-button color="primary">Login</button>
+                <button type="reset" mat-raised-button color="accent">Clear</button>
+            </div>
+
+            <!-- <div>
+              <table border="1"> 
+                  <tr>
+                    <td>Name</td>
+                    <td>roll</td>
+                    <td>email</td>
+                    <td>Department</td>
+                  </tr>
+                  <tr *ngFor="let items of user_records">
+                    <td>{{items.vendorName}}</td>
+                    <td>{{items.vendorRollNumber}}</td>
+                  </tr>
+              </table>
+              <button (click)="dologin()" mat-raised-button color="primary">Xm</button>
+            </div> -->
+              
+        </form>
+    </div>
+</div>
