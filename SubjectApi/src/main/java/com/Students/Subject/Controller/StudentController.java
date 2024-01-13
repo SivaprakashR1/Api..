@@ -21,8 +21,8 @@ public class StudentController {
 
     public StudentService studentService;
 
-@GetMapping("/get-by-subject")
-public ResponseEntity<List<StudentSubjectDTO>> searchBySubject(@RequestParam String subjectName){
+    @GetMapping("/get-by-subject")
+    public ResponseEntity<List<StudentSubjectDTO>> searchBySubject(@RequestParam String subjectName){
     List<StudentSubjectDTO> students = studentService.searchBySubjectName(subjectName);
     return ResponseEntity.ok(students);
 }
@@ -32,13 +32,13 @@ public ResponseEntity<List<StudentSubjectDTO>> searchBySubject(@RequestParam Str
         return studentService.getAllDetails();
 }
 
-@GetMapping("/get-by-student")
-public ResponseEntity<List<StudentSubjectDTO>> searchByStudent(@RequestParam String studentName){
+    @GetMapping("/get-by-student")
+    public ResponseEntity<List<StudentSubjectDTO>> searchByStudent(@RequestParam String studentName){
     List<StudentSubjectDTO> students = studentService.searchByStudentName(studentName);
     return ResponseEntity.ok(students);
 }
 
-@PostMapping("/PostDetails")
+    @PostMapping("/PostDetails")
     public String SaveDetails(@RequestBody Student student){
     studentService.saveStudentDetails(student);
     return "Posted";

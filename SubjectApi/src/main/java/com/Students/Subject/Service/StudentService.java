@@ -13,8 +13,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +29,7 @@ public class StudentService {
     private SubjectRepository subjectRepository;
     Logger logger = LoggerFactory.getLogger(StudentService.class);
 
-    @Autowired
+
     public StudentService(StudentRepository studentRepository, SubjectRepository subjectRepository) {
         this.studentRepository = studentRepository;
         this.subjectRepository = subjectRepository;
@@ -93,6 +98,20 @@ public class StudentService {
         Page<Student> students = studentRepository.findAll(pageRequest);
         return ResponseEntity.ok(students.map(this::convertEntityToDto));
     }
+
+
+
+//    @Scheduled(fixedRate = 1000)
+//    @Scheduled(fixedDelay = 1000)
+//    @Async
+//    @Scheduled(cron = "*/2 * * * * *")
+//    public void Timescheduler() throws InterruptedException{
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//        String formattedDateTime = localDateTime.format(dateTimeFormatter);
+//        logger.info(formattedDateTime);
+//        Thread.sleep(3000);
+//    }
 
 
 //    public ResponseEntity<Page<Student>> getStudentPagination(Integer pageNumber, Integer pageSize) {
